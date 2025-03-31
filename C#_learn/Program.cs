@@ -157,6 +157,89 @@ namespace ConsoleApp
             {
                 Console.WriteLine(i);
             }
+            //-----------------------------ARRAY IN STRING------------------
+            int num = Convert.ToInt32(Console.ReadLine());
+            string[] strarray = new string[num];
+            Console.WriteLine("enter the students name:");
+            for (int i = 0; i < num; i++)
+            {
+                strarray[i] = Console.ReadLine();
+            }
+            Console.WriteLine("print the studnet list:");
+            for (int i = 0; i < num; i++)
+            {
+                Console.WriteLine(strarray[i]);
+            }
+            Console.WriteLine($"length of array {strarray.Length}");
+            Array.Reverse(strarray);
+            foreach (var item in strarray)
+            {
+                Console.WriteLine(item);
+            }
+            Console.ReadLine();
+
+
+            //---------------------------------TWO-DIMENSIONAL ARRAY-------------------------------
+            int[,] myarr = new int[2, 3];
+            Console.WriteLine("enter the values:");
+            for (int i = 0; i < 2; i++)
+            {
+                for (int j = 0; j < 3; j++)
+                {
+                    myarr[i, j] = Convert.ToInt32(Console.ReadLine());
+                }
+            }
+            Console.WriteLine("prit the integer values:");
+            for (int i = 0; i < 2; i++)
+            {
+                for (global::System.Int32 j = 0; j < 3; j++)
+                {
+                    Console.WriteLine(myarr[i, j] + " ");
+                }
+
+            }
+
+            //-----------------------------------------------JAGGED ARRAY-------------------------------------------------
+            Console.WriteLine("Enter the number of classes");
+            int numberofclass = Convert.ToInt32(Console.ReadLine());
+            string[][] school = new string[numberofclass][];
+            for (int i = 0; i < numberofclass; i++)
+            {
+                Console.WriteLine($"enter the number of students for class {i + 1}");
+                int numofstudents = Convert.ToInt32(Console.ReadLine());
+                school[i] = new string[numofstudents];
+                for (int j = 0; j < numofstudents; j++)
+                {
+                    Console.WriteLine($"enter the name of student {j + 1} in class {i + 1}");
+                    school[i][j] = Console.ReadLine();
+
+                }
+
+            }
+            Console.WriteLine("\n****************student list*************");
+            for (int i = 0; i < school.Length; i++)
+            {
+                Console.WriteLine($"\n class {i + 1}:");
+                for (int j = 0; j < school[i].Length; j++)
+                {
+                    Console.WriteLine($" -{school[i][j]}");
+                }
+            }
+            Console.ReadLine();
+
+            // ------------------------------------
+            static void order(string size, string stuffed, string topping = "cheese")
+            {
+                Console.WriteLine($" size ={size} stuffed={stuffed} topping ={topping}");
+            }
+            static void Main(string[] args)
+            {
+                order(size: "medium", stuffed: "panner" , topping :" butter");
+
+
+            }
+            //-------------------------------
+
 
 
         }
